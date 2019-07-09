@@ -1,1 +1,1 @@
-include ':app'
+include ':app',':common',':home_module', ':domain'
