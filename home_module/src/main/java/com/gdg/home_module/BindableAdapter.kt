@@ -1,4 +1,4 @@
-package com.gdg.common
+package com.gdg.home_module
 
 import androidx.databinding.BindingAdapter
 import androidx.recyclerview.widget.RecyclerView

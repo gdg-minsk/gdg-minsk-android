@@ -4,19 +4,20 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.gdg.common.BindableAdapter
 import com.gdg.domain.Event
+import com.gdg.home_module.BindableAdapter
 import com.gdg.home_module.R
-import java.util.Collections.emptyList
 import kotlinx.android.synthetic.main.event_list_item.view.*
+import java.util.Collections.emptyList
 
 
-class EventAdapter:RecyclerView.Adapter<EventAdapter.UserHolder>() ,BindableAdapter<Event>{
+class EventAdapter:RecyclerView.Adapter<EventAdapter.UserHolder>() , BindableAdapter<Event> {
 
     override fun setData(items: List<Event>) {
         events = items
         notifyDataSetChanged()
     }
+
 
     override fun changedPositions(positions: Set<Int>) {
         positions.forEach(this::notifyItemChanged)

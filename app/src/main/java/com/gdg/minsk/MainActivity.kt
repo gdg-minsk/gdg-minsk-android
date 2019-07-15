@@ -1,7 +1,6 @@
 package com.gdg.minsk
 
 import android.os.Bundle
-import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.gdg.home_module.viewmodel.HomeFragment
@@ -32,6 +31,7 @@ class MainActivity : AppCompatActivity() {
         navView.selectedItemId = R.id.navigation_home
 
         navView.setOnNavigationItemSelectedListener(onNavigationItemSelectedListener)
+
     }
 
     override fun onStart() {
@@ -39,8 +39,7 @@ class MainActivity : AppCompatActivity() {
         supportFragmentManager
             .beginTransaction()
             .add(R.id.fragment_container, HomeFragment.newInstance())
-            .commit();
-
+            .commit()
     }
 
 
@@ -48,6 +47,6 @@ class MainActivity : AppCompatActivity() {
         supportFragmentManager
             .beginTransaction()
             .replace(R.id.fragment_container, fragment)
-            .commit();
+            .commit()
     }
 }

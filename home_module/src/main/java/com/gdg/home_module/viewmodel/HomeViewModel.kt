@@ -9,13 +9,23 @@ import com.gdg.home_module.view.HomeData
 
 class HomeViewModel(val model: HomeModel) : ViewModel(), HomeData {
 
-    private val upcomingEvents = MutableLiveData<Event>()
-   // internal get() {}
+    private var mutableUpcomingEvents = MutableLiveData<List<Event>>()
+        get() {
+             field.value = model.getUpcomingEvents()
+            return field
+        }
 
-    private val passedEvents = MutableLiveData<Event>()
+    private var mutablePassedEvents = MutableLiveData<List<Event>>()
+        get() {
+            field.value = model.getUpcomingEvents()
+            return field
+        }
 
-    override fun getUpcommingEvents(): LiveData<Event> = upcomingEvents
 
-    override fun getPassedEvents(): LiveData<Event> = passedEvents
+    val stub = 0
+    override val upcommingEvents: LiveData<List<Event>> = mutableUpcomingEvents
+
+    override val passedEvents: LiveData<List<Event>> = mutablePassedEvents
+
 
 }
