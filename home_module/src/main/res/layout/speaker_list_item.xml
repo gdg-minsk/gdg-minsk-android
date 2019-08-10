@@ -5,7 +5,7 @@
                                    android:id="@+id/event_view"
                                    android:layout_margin="@dimen/card_margin"
                                    card_view:cardCornerRadius="@dimen/card_corner_radius"
-                                   android:layout_width="@dimen/card_wight"
+                                   android:layout_width="match_parent"
                                    android:layout_height="@dimen/card_height" app:ignore="NamespaceTypo">
 
     <LinearLayout

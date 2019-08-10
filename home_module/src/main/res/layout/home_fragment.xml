@@ -6,12 +6,21 @@
                 name="viewModel"
                 type="com.gdg.home_module.viewmodel.HomeViewModel"/>
     </data>
-    <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+    <LinearLayout android:orientation="vertical"
+                  android:layout_width="match_parent"
+                  android:layout_height="match_parent">
         <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/upcoming_events"
+                android:layout_weight="2"
                 app:data='@{viewModel.upcommingEvents}'
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+                android:layout_marginTop="@dimen/standart_margin"
+                android:id="@+id/passed_events"
+                android:layout_weight="1"
+                app:data='@{viewModel.passedEvents}'
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"/>
 

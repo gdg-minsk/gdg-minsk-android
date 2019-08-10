@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="primary_color">#7FC042</color>
+    <color name="second_color">#70B639</color>
+    <color name="red">#DA493C</color>
+    <color name="blue">#618EC7</color>
+    <color name="blue_light">#4893FF</color>
+    <color name="blue_dark">#366EBF</color>
+    <color name="green">#03A258</color>
+    <color name="yellow">#F9CB42</color>
+    <color name="grey"></color>
+    <color name="text">#FFFDFF</color>
+
+    <color name="card_background">@color/primary_color</color>
+    <color name="passed_event_card_background">@color/blue_light</color>
+</resources>

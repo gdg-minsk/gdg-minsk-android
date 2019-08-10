@@ -6,15 +6,15 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.PagerSnapHelper
 import androidx.recyclerview.widget.RecyclerView
 import com.gdg.home_module.R
-import kotlinx.android.synthetic.main.home_fragment.*
-import org.koin.android.viewmodel.ext.android.getViewModel
-import org.koin.android.viewmodel.ext.android.viewModel
 import com.gdg.home_module.databinding.HomeFragmentBinding
 import com.gdg.home_module.view.EventAdapter
+import kotlinx.android.synthetic.main.home_fragment.*
+import org.koin.android.viewmodel.ext.android.viewModel
+
 
 class HomeFragment : Fragment() {
 
@@ -28,8 +28,9 @@ class HomeFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val homeItemBinding:HomeFragmentBinding = DataBindingUtil.inflate(layoutInflater, R.layout.home_fragment, container, false)
-        homeItemBinding.viewModel=viewModel
+        val homeItemBinding: HomeFragmentBinding =
+            DataBindingUtil.inflate(layoutInflater, R.layout.home_fragment, container, false)
+        homeItemBinding.viewModel = viewModel
         homeItemBinding.setLifecycleOwner(this)
 
         return homeItemBinding.root
@@ -38,8 +39,14 @@ class HomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        upcoming_events.layoutManager=LinearLayoutManager(context, RecyclerView.HORIZONTAL,false)
-        upcoming_events.adapter=EventAdapter()
+        upcoming_events.layoutManager = LinearLayoutManager(context, RecyclerView.HORIZONTAL, false)
+        upcoming_events.adapter = EventAdapter(R.layout.event_list_item)
+
+        val snapHelper = PagerSnapHelper()
+        snapHelper.attachToRecyclerView(upcoming_events)
+
+        passed_events.layoutManager = LinearLayoutManager(context, RecyclerView.VERTICAL, false)
+        passed_events.adapter = EventAdapter(R.layout.passed_event_list_item)
 
     }
 

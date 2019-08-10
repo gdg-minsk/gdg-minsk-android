@@ -11,7 +11,7 @@ import kotlinx.android.synthetic.main.event_list_item.view.*
 import java.util.Collections.emptyList
 
 
-class EventAdapter:RecyclerView.Adapter<EventAdapter.UserHolder>() , BindableAdapter<Event> {
+class EventAdapter(val elementLayout:Int):RecyclerView.Adapter<EventAdapter.UserHolder>() , BindableAdapter<Event> {
 
     override fun setData(items: List<Event>) {
         events = items
@@ -29,7 +29,7 @@ class EventAdapter:RecyclerView.Adapter<EventAdapter.UserHolder>() , BindableAda
         val inflater = LayoutInflater.from(parent.context)
         return UserHolder(
             inflater.inflate(
-                R.layout.event_list_item,
+                elementLayout,
                 parent,
                 false
             )
