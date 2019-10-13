@@ -9,8 +9,8 @@
     <color name="blue_dark">#366EBF</color>
     <color name="green">#03A258</color>
     <color name="yellow">#F9CB42</color>
-    <color name="grey"></color>
-    <color name="text">#FFFDFF</color>
+    <color name="grey">#808080</color>
+    <color name="white">#FFFDFF</color>
 
     <color name="card_background">@color/primary_color</color>
     <color name="passed_event_card_background">@color/blue_light</color>

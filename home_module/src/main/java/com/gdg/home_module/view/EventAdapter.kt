@@ -4,14 +4,13 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.gdg.domain.Event
+import com.gdg.domain.dto.Event
 import com.gdg.home_module.BindableAdapter
-import com.gdg.home_module.R
-import kotlinx.android.synthetic.main.event_list_item.view.*
+import kotlinx.android.synthetic.main.upcoming_event_list_item.view.*
 import java.util.Collections.emptyList
 
 
-class EventAdapter(val elementLayout:Int):RecyclerView.Adapter<EventAdapter.UserHolder>() , BindableAdapter<Event> {
+class EventAdapter(val elementLayout:Int):RecyclerView.Adapter<EventAdapter.EventHolder>() , BindableAdapter<Event> {
 
     override fun setData(items: List<Event>) {
         events = items
@@ -25,9 +24,9 @@ class EventAdapter(val elementLayout:Int):RecyclerView.Adapter<EventAdapter.User
 
     var events = emptyList<Event>()
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): UserHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): EventHolder {
         val inflater = LayoutInflater.from(parent.context)
-        return UserHolder(
+        return EventHolder(
             inflater.inflate(
                 elementLayout,
                 parent,
@@ -38,16 +37,19 @@ class EventAdapter(val elementLayout:Int):RecyclerView.Adapter<EventAdapter.User
 
     override fun getItemCount() = events.size
 
-    override fun onBindViewHolder(holder: UserHolder, position: Int) {
+    override fun onBindViewHolder(holder: EventHolder, position: Int) {
         holder.bind(events[position])
     }
 
-     class UserHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+     class EventHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
         fun bind(event: Event) {
             with(itemView) {
                 event_title.text = event.title
                 event_date.text=event.getDateInFormat()
+
+                val labelsAdapter = LabelAdapter(event.labels)
+                event_labels.setAdapter(labelsAdapter)
             }
         }
     }

@@ -40,7 +40,7 @@ class HomeFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         upcoming_events.layoutManager = LinearLayoutManager(context, RecyclerView.HORIZONTAL, false)
-        upcoming_events.adapter = EventAdapter(R.layout.event_list_item)
+        upcoming_events.adapter = EventAdapter(R.layout.upcoming_event_list_item)
 
         val snapHelper = PagerSnapHelper()
         snapHelper.attachToRecyclerView(upcoming_events)

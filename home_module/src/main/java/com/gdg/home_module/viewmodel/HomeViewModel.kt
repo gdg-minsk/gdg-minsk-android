@@ -3,7 +3,7 @@ package com.gdg.home_module.viewmodel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.gdg.domain.Event
+import com.gdg.domain.dto.Event
 import com.gdg.home_module.model.HomeModel
 import com.gdg.home_module.view.HomeData
 

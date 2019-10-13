@@ -1,4 +1,4 @@
-package com.gdg.domain
+package com.gdg.domain.dto
 
 data class Speaker (
 

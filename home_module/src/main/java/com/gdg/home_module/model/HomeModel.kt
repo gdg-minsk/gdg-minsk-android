@@ -1,6 +1,6 @@
 package com.gdg.home_module.model
 
-import com.gdg.domain.Event
+import com.gdg.domain.dto.Event
 
 interface HomeModel {
     fun getUpcomingEvents():List<Event>

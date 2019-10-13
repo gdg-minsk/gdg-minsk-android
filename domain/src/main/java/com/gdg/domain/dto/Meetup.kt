@@ -1,5 +1,6 @@
-package com.gdg.domain
+package com.gdg.domain.dto
 
+import com.gdg.domain.dto.Speaker
 import java.util.*
 
 data class Meetup(

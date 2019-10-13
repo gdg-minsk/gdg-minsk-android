@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "598967002901",
+    "firebase_url": "https://gdg-minsk-app.firebaseio.com",
+    "project_id": "gdg-minsk-app",
+    "storage_bucket": "gdg-minsk-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:598967002901:android:42f36d642376ee3a7f2b1c",
+        "android_client_info": {
+          "package_name": "com.gdg.minsk"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "598967002901-c8suhl2h9gnasltcfgh1f6fhctv4ehne.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBncJsiex8Jctvi5qAeDkH6PTYsmErkVIk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "598967002901-c8suhl2h9gnasltcfgh1f6fhctv4ehne.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

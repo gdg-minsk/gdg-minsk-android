@@ -1,0 +1,74 @@
+<com.facebook.shimmer.ShimmerFrameLayout
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:shimmer="http://schemas.android.com/tools"
+        android:id="@+id/shimmer_view_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:orientation="vertical"
+        shimmer:duration="800">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+    >
+
+        <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline" android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent="0.3"/>
+
+        <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/start" android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.2"/>
+
+        <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/end" android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.8"/>
+
+        <include layout="@layout/upcoming_event_list_item"
+                 app:layout_constraintStart_toStartOf="@id/start"
+                 app:layout_constraintEnd_toEndOf="@id/end"
+                 app:layout_constraintTop_toTopOf="parent"
+                 app:layout_constraintBottom_toBottomOf="@id/guideline"
+                 android:id="@+id/shimmer_upcomming"
+                 app:layout_constraintBottom_toTopOf="@id/guideline"
+                 android:layout_width="0dp"
+                 android:layout_height="0dp"/>
+
+        <include layout="@layout/passed_event_list_item"
+                 app:layout_constraintTop_toTopOf="@id/guideline"
+                 app:layout_constraintStart_toStartOf="parent"
+                 app:layout_constraintEnd_toEndOf="parent"
+                 android:id="@+id/shimmer_passed_1"
+                 android:layout_marginTop="@dimen/standart_margin"
+                 android:layout_width="match_parent"
+                 android:layout_height="0dp"/>
+
+        <include layout="@layout/passed_event_list_item"
+                 app:layout_constraintStart_toStartOf="parent"
+                 app:layout_constraintEnd_toEndOf="parent"
+                 android:id="@+id/shimmer_passed_2"
+                 app:layout_constraintTop_toBottomOf="@id/shimmer_passed_1"
+                 android:layout_marginTop="@dimen/standart_margin"
+                 android:layout_width="match_parent"
+                 android:layout_height="0dp"/>
+
+        <include layout="@layout/passed_event_list_item"
+                 app:layout_constraintStart_toStartOf="parent"
+                 app:layout_constraintEnd_toEndOf="parent"
+                 android:id="@+id/shimmer_passed_3"
+                 app:layout_constraintTop_toBottomOf="@id/shimmer_passed_2"
+                 android:layout_marginTop="@dimen/standart_margin"
+                 android:layout_width="match_parent"
+                 android:layout_height="0dp"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.facebook.shimmer.ShimmerFrameLayout>

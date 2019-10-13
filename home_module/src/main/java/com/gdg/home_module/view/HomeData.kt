@@ -1,7 +1,7 @@
 package com.gdg.home_module.view
 
 import androidx.lifecycle.LiveData
-import com.gdg.domain.Event
+import com.gdg.domain.dto.Event
 
 
 interface HomeData {

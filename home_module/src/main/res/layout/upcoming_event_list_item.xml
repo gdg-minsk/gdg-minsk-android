@@ -3,18 +3,25 @@
                                    xmlns:card_view="http://schemas.android.com/apk/res-auto"
                                    xmlns:app="http://schemas.android.com/tools"
                                    android:id="@+id/event_view"
-                                   android:layout_margin="@dimen/card_margin"
+                                   android:layout_marginTop="@dimen/card_margin"
+                                   android:layout_marginStart="@dimen/card_margin_big"
+                                   android:layout_marginEnd="@dimen/card_margin_big"
+                                   android:layout_marginBottom="@dimen/card_margin_big"
                                    card_view:cardCornerRadius="@dimen/card_corner_radius"
-                                   android:layout_width="@dimen/card_wight"
-                                   android:layout_height="@dimen/card_height" app:ignore="NamespaceTypo">
+                                   card_view:layout_anchorGravity="center_horizontal"
+                                   android:layout_gravity="center_horizontal"
+                                   android:layout_width="match_parent"
+                                   android:layout_height="@dimen/upcoming_card_height" app:ignore="NamespaceTypo">
 
     <LinearLayout
             android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_gravity="center"
+            android:gravity="center_horizontal"
+            android:layout_height="match_parent"
+            android:background="@drawable/upcoming_event_card_background">
         <TextView
                 android:text="TextView"
-                android:background="@color/card_background"
                 android:layout_width="match_parent"
                 android:maxLines="2"
                 android:layout_height="wrap_content" android:id="@+id/event_title"/>
@@ -24,7 +31,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" android:id="@+id/event_date"/>
         <androidx.recyclerview.widget.RecyclerView
-                android:visibility="gone"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent" android:id="@+id/event_labels"/>
     </LinearLayout>

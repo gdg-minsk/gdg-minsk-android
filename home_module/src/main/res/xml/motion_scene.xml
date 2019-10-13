@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:android="http://schemas.android.com/apk/res/android" xmlns:motion="http://schemas.android.com/tools">
+
+    <Transition
+            app:constraintSetStart="@id/start"
+            app:constraintSetEnd="@id/end"
+            app:duration="1000">
+        <OnSwipe
+                app:touchAnchorId="@+id/passed_events"
+                app:touchAnchorSide="top"
+                app:dragScale="0.5"
+                app:dragDirection="dragUp"
+                app:moveWhenScrollAtTop="true"/>
+    </Transition>
+    <ConstraintSet android:id="@+id/start">
+        <Constraint
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toTopOf="@id/guideline"
+                android:id="@+id/upcoming_events"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"/>
+        <Constraint
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/guideline"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_marginTop="@dimen/standart_margin"
+                android:id="@+id/passed_events"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"/>
+    </ConstraintSet>
+
+    <ConstraintSet android:id="@+id/end">
+        <Constraint
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toTopOf="@id/guideline"
+                android:id="@+id/upcoming_events"
+                android:visibility="gone"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"/>
+        <Constraint
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_marginTop="@dimen/standart_margin"
+                android:id="@+id/passed_events"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"/>
+    </ConstraintSet>
+</MotionScene>

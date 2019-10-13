@@ -6,23 +6,54 @@
                 name="viewModel"
                 type="com.gdg.home_module.viewmodel.HomeViewModel"/>
     </data>
-    <LinearLayout android:orientation="vertical"
-                  android:layout_width="match_parent"
-                  android:layout_height="match_parent">
-        <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/upcoming_events"
-                android:layout_weight="2"
-                app:data='@{viewModel.upcommingEvents}'
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"/>
+
+    <androidx.constraintlayout.motion.widget.MotionLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layoutDescription="@xml/motion_scene">
+
+        <include android:id="@+id/home_shimmer_effect" layout="@layout/shimmer"
+        android:visibility="gone"/>
+
+        <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline" android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent="0.3"/>
+
+        <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/start" android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.2"/>
+
+        <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/end" android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.8"/>
 
         <androidx.recyclerview.widget.RecyclerView
+                app:layout_constraintStart_toStartOf="@id/start"
+                app:layout_constraintEnd_toEndOf="@id/end"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toTopOf="@id/guideline"
+                android:id="@+id/upcoming_events"
+                app:data='@{viewModel.upcommingEvents}'
+                android:layout_width="0dp"
+                android:layout_height="0dp"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/guideline"
+                app:layout_constraintBottom_toBottomOf="parent"
                 android:layout_marginTop="@dimen/standart_margin"
                 android:id="@+id/passed_events"
-                android:layout_weight="1"
                 app:data='@{viewModel.passedEvents}'
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"/>
+                android:layout_height="0dp"/>
 
-    </LinearLayout>
+
+    </androidx.constraintlayout.motion.widget.MotionLayout>
 </layout>
